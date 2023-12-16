@@ -7,6 +7,7 @@ import webbrowser
 def MainExe():
     while True:
         query = MicExecution()
+        print('this is the query' , query)
         
         sites = [["YouTube","https://youtube.com"], ["Facebook","https://facebook.com"], ["Google","https://google.com"], ["Wikipedia","https://wikipedia.com"],
                  ["Instagram", "https://www.instagram.com/"], ["Open AI", "https://chat.openai.com/"], ["GeeksforGeeks", "https://www.geeksforgeeks.org/"],

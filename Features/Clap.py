@@ -6,7 +6,7 @@ FORMAT = pyaudio.paInt16
 CHANNELS = 1  # Mono audio
 RATE = 44100  # Sample rate (adjust to your needs)
 CHUNK = 1024  # Size of each audio chunk
-THRESHOLD = 32000  # Adjust this threshold based on your environment and microphone sensitivity
+THRESHOLD = 11221  # Adjust this threshold based on your environment and microphone sensitivity
 
 def Tester():
     p = pyaudio.PyAudio()
@@ -24,6 +24,7 @@ def Tester():
             audio_data = np.frombuffer(data, dtype=np.int16)
             
             # Check if the audio data exceeds the threshold
+            # (print(np.max(np.abs(audio_data))))
             if np.max(np.abs(audio_data)) > THRESHOLD:
                 print("Clap detected!")
                 break

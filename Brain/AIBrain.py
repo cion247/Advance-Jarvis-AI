@@ -2,7 +2,7 @@
 # API Key
 
 
-fileopen = open("Data//Api.txt","r")
+fileopen = open("./Data/Api.txt","r")
 API = fileopen.read()
 fileopen.close()
 
@@ -16,7 +16,7 @@ load_dotenv()
 completion = openai.Completion()
 
 def ReplyBrain(question, chat_log = None):
-    FileLog = open("Data/ChatLog.txt","r")
+    FileLog = open("./Data/ChatLog.txt","r")
     chat_log_template = FileLog.read()
     FileLog.close()
     

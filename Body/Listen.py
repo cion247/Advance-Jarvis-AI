@@ -12,17 +12,23 @@ def Listen():
     try:
         print("Recognizing...")
         query = r.recognize_google(audio, language='hi')
+        # print('a')
         
     except:
+        
         return ""
     
     query = str(query).lower()
+    # print('returning query from listen ', query)
     return query
 
 def TranslationHinToEng(Text):
     line = str(Text)
+
+    tkk = "429490.24646915"
+    # translate = Translator(service_urls=['translate.googleapis.com'],tkk=tkk)
     translate = Translator()
-    result = translate.translate(line)
+    result = translate.translate(line,dest='en')
     data = result.text
     print("")
     print(f"You : {data}")
